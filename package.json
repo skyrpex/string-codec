@@ -1,5 +1,5 @@
 {
-	"name": "string-codec",
+	"name": "@skyrpex/string-codec",
 	"version": "1.0.0",
 	"description": "Encodes stringifiable objects into a string while retaining the original object type",
 	"author": {

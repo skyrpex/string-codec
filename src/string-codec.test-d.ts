@@ -1,5 +1,5 @@
-import { expectTypeOf, test } from "vitest";
 import type { Opaque } from "opaque-type";
+import { expectTypeOf, test } from "vitest";
 import { type StringEncoded, stringify } from "./string-codec.ts";
 
 test("returns proper types for literals", () => {

@@ -2,6 +2,8 @@
 
 Encodes stringifiable objects into a string while retaining the original object type.
 
+> In contrast to other codecs, this codec doesn't know how to parse the encoded string.
+
 ## Installation
 
 ```sh
@@ -11,15 +13,13 @@ npm install @skyrpex/string-codec
 ## Usage
 
 ```ts
-import * as stringCodec from "@skyrpex/string-codec";
+import { stringify } from "@skyrpex/string-codec";
 
-const encoded = stringCodec.stringify({
-	key: "value",
-});
-// encoded = "{"key":"value"}"
+const encodedNumber = stringify(7777); // typeof encodedNumber = StringEncoded<number>
+const encodedBigInt = stringify(7777n); // typeof encodedBigInt = StringEncoded<bigint>
 
-const decoded = jsonCodec.parse(encoded);
-// decoded = { key: "value" }
+const number = Number(encodedNumber); // number = 7777
+const bigint = BigInt(encodedBigInt); // bigint = 7777n
 ```
 
 ## Other codecs

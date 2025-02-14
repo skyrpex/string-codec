@@ -4,6 +4,15 @@ queue_rules:
     conditions:
       - "label=autorelease: pending"
 pull_request_rules:
+  - name: Automatic merge dependencies PRs
+    description: Merge when PR passes all branch protection and has label dependencies
+    conditions:
+      - label = dependencies
+    actions:
+      merge:
+        method: squash
+      queue:
+        name: default
   - name: Automatic merge release PRs
     conditions:
       - "label=autorelease: pending"
